@@ -1,7 +1,5 @@
 package Geral;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,8 +13,16 @@ public class PageObject
 	public PageObject(WebDriver browser)
 	{
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-		this.browser = new ChromeDriver();
-		this.browser.navigate().to(URL_LOGIN);
+		if (browser == null) 
+		{
+            this.browser = new ChromeDriver();
+            this.browser.navigate().to(URL_LOGIN);
+        } 
+		else 
+		{
+            this.browser = browser;
+            this.browser.navigate().to(URL_LOGIN);
+        }
 	}
 	
 	public void fechar() 
