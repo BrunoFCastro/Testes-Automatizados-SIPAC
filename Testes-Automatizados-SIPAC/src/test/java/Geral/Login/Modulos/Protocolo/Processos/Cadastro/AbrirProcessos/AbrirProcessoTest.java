@@ -71,11 +71,11 @@ public class AbrirProcessoTest
 		this.abrirProcessos.efetuarLogin();
 		this.abrirProcessos.caminho();
 		
-		this.abrirProcessos.adicionarServidorInteressadoComFaltaDeDadosDoServidor();
+		this.abrirProcessos.adicionarServidorInteressadoComFaltaDeDadosDoEmail();
 		
 		//Assert.assertFalse(paginaDeLogin.isPaginaAtual());
 		//Assert.assertTrue(this.abrirProcessos.isPaginaAtual());
-		Assert.assertTrue(abrirProcessos.mensagemDeInteressadoAdicionadoComErooPorFaltaDeDadosDoEmail());
+		Assert.assertTrue(abrirProcessos.mensagemDeInteressadoAdicionadoComEroPorFaltaDeDadosDoEmail());
 	}
 	
 	@Test
@@ -121,7 +121,7 @@ public class AbrirProcessoTest
 		
 		//Assert.assertFalse(paginaDeLogin.isPaginaAtual());
 		//Assert.assertTrue(this.abrirProcessos.isPaginaAtual());
-		Assert.assertTrue(abrirProcessos.mensagemDeInteressadoAdicionadoComErooPorFaltaDeDadosDoEmail());
+		Assert.assertTrue(abrirProcessos.mensagemDeInteressadoAdicionadoComEroPorFaltaDeDadosDoEmail());
 	}
 
 	@Test
@@ -207,11 +207,11 @@ public class AbrirProcessoTest
 		this.abrirProcessos.efetuarLogin();
 		this.abrirProcessos.caminho();
 		
-		this.abrirProcessos.adicionarCredorInteressadoComFaltaDeDadosDoServidor();
+		this.abrirProcessos.adicionarUnidadeInteressadoComFaltaDeDadosDoEmail();
 		
 		//Assert.assertFalse(paginaDeLogin.isPaginaAtual());
 		//Assert.assertTrue(this.abrirProcessos.isPaginaAtual());
-		Assert.assertTrue(abrirProcessos.mensagemDeInteressadoAdicionadoComErooPorFaltaDeDadosDoEmail());
+		Assert.assertTrue(abrirProcessos.mensagemDeInteressadoAdicionadoComEroPorFaltaDeDadosDoEmail());
 	}
 
 	/*@Test
@@ -241,10 +241,12 @@ public class AbrirProcessoTest
 		this.abrirProcessos.efetuarLogin();
 		this.abrirProcessos.caminho();
 		
+		this.abrirProcessos.adicionarServidorInteressado();
+		
 		this.abrirProcessos.preencherFormularioAbrirProcessosComTodosOsDadosCorretos();
 		
 	
-		//this.abrirProcessos.SubmeterFormularioAbrirProcessos();
+		this.abrirProcessos.submeterFormularioAbrirProcessos();
 		
 		Assert.assertTrue(this.abrirProcessos.isPaginaAtual());
 	}

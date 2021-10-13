@@ -32,7 +32,7 @@ public class AbrirProcessoPage extends PageObject
 	{
 		return browser.getPageSource().contains("Servidor: Campo obrigatório não informado.");
 	}
-	public boolean mensagemDeInteressadoAdicionadoComErooPorFaltaDeDadosDoEmail() 
+	public boolean mensagemDeInteressadoAdicionadoComEroPorFaltaDeDadosDoEmail() 
 	{
 		return browser.getPageSource().contains("E-mail: Campo obrigatório não informado.");
 	}
@@ -41,8 +41,30 @@ public class AbrirProcessoPage extends PageObject
 	{	
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:classificacaoConarq\"]")).click();
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:classificacaoConarq\"]")).sendKeys("MODERNIZAÇÃO E REFORMA ADMINISTRATIVA PROJETOS, ESTUDOS E NORMAS"); //001 - MODERNIZAÇÃO E REFORMA ADMINISTRATIVA PROJETOS, ESTUDOS E NORMAS
+		try
+        {
+            Thread.sleep(700);
+        }
+        catch (InterruptedException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:classificacaoConarq\"]")).sendKeys(Keys.DOWN);
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:classificacaoConarq\"]")).sendKeys(Keys.ENTER);
+		
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:natureza\"]")).sendKeys(Keys.DOWN);
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:natureza\"]")).sendKeys(Keys.ENTER);
+		
+		try
+        {
+            Thread.sleep(700);
+        }
+        catch (InterruptedException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 		
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:assunto\"]")).click();
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:assunto\"]")).sendKeys("test");
@@ -50,6 +72,20 @@ public class AbrirProcessoPage extends PageObject
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:natureza\"]")).click();
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:natureza\"]")).sendKeys(Keys.DOWN);
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:natureza\"]")).sendKeys(Keys.ENTER);
+		
+		try
+        {
+            Thread.sleep(700);
+        }
+        catch (InterruptedException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+		
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:hipoteseLegalRestrito\"]")).click();
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:hipoteseLegalRestrito\"]")).sendKeys(Keys.DOWN);
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:hipoteseLegalRestrito\"]")).sendKeys(Keys.ENTER);
 		
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:observacao\"]")).click();
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:observacao\"]")).sendKeys("test");
@@ -282,14 +318,14 @@ public class AbrirProcessoPage extends PageObject
 	public void adicionarUnidadeInteressadoComFaltaDeDadosDoServidor() 
 	{
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:email\"]")).click();
-		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:email\"]")).sendKeys("elieide.orrico!!@ufba.br");
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:email\"]")).sendKeys("sti!!@ufba.br");
 		
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm\"]/table/tbody/tr[2]/td/table/tfoot/tr/td/input")).click();
 	}
 	public void adicionarUnidadeInteressadoComFaltaDeDadosDoEmail() 
 	{	
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:nomeServidorInteressado\"]")).click();
-		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:nomeServidorInteressado\"]")).sendKeys("ELIEIDE SANTOS ORRICO"); //ELIEIDE SANTOS ORRICO (1574037)
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:nomeServidorInteressado\"]")).sendKeys("SUPERINTENDÊNCIA DE TECNOLOGIA DA INFORMAÇÃO /UFBA"); //ELIEIDE SANTOS ORRICO (1574037)
 		try
         {
             Thread.sleep(2000);
@@ -360,6 +396,10 @@ public class AbrirProcessoPage extends PageObject
             e.printStackTrace();
         }
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:nomeServidorInteressado\"]")).sendKeys(Keys.ENTER);
+		
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:email\"]")).click();
+		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm:email\"]")).sendKeys("");
+		
 		browser.findElement(By.xpath("//*[@id=\"dadosGeraisForm\"]/table/tbody/tr[2]/td/table/tfoot/tr/td/input")).click();
 	}
 	
