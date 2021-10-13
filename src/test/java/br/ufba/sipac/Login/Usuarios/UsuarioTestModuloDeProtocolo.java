@@ -2,8 +2,8 @@ package br.ufba.sipac.Login.Usuarios;
 
 public class UsuarioTestModuloDeProtocolo 
 {
-	private static String usuario = "tcoutinho";
-	private static String senha = "Coutinho.123";
+	private static String usuario = "";
+	private static String senha = "";
 
 	public static String getUsuario() 
 	{
